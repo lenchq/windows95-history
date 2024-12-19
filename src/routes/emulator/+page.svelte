@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import win95_start from '$lib/assets/start.jpg';
+	import win95_start_desktop from '$lib/assets/win95_start.jpg';
 
 	let screen: HTMLDivElement;
 	onMount(async () => {});
@@ -7,8 +9,6 @@
 	async function start() {
 		if (started) return;
 		started = true;
-
-		await import('$lib/libv86');
 
 		// @ts-ignore
 		var emulator = new V86({
@@ -65,12 +65,12 @@
 	{#if !started}
 		<div class="flex cursor-pointer place-content-center place-items-center">
 			<img
-				class="absolute max-h-screen max-w-full blur-md"
-				src="/src/assets/win95_start.jpg"
+				class="absolute max-h-screen max-w-full blur-sm"
+				src={win95_start_desktop}
 				alt=""
 			/>
 			<div class="relative z-10 flex flex-col place-items-center">
-				<img class="h-32" src="/src/assets/start.jpg" alt="" />
+				<img class="h-32" src={win95_start} alt="" />
 				<!-- <h3 class="text-white font-bold text-3xl">
 					ЗАПУСК
 				</h3> -->
@@ -89,6 +89,6 @@
 
 <style>
 	img {
-		image-rendering: pixelated;
+		image-rendering: crisp-edges;
 	}
 </style>

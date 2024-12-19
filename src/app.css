@@ -4,7 +4,7 @@
 
 @font-face {
 	font-family: 'win95font';
-	src: url('./assets/fonts/MS Sans Serif 8pt.ttf') format('truetype'); /* Safari, Android, iOS */
+	src: url('$lib/assets/fonts/MS Sans Serif 8pt.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 
 * {

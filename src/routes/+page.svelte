@@ -1,6 +1,13 @@
 <script lang="ts">
 	import '98.css';
 	import TitleBar from '$lib/components/TitleBar.svelte';
+	import windows95_box from '$lib/assets/windows95box.jpg';
+	import windows95_desktop from '$lib/assets/desktop.png';
+	import windows2000 from '$lib/assets/windows2000.jpg';
+	import win95_start from '$lib/assets/start.jpg';
+	import win95_start_desktop from '$lib/assets/win95_start.jpg';
+	import windows95_commercial from '$lib/assets/windows95_commercial.mp4';
+	import start_me_up from '$lib/assets/start_me_up.mp3';
 </script>
 
 <div class="page flex w-full flex-col place-items-center pt-10">
@@ -38,7 +45,7 @@
 					</p>
 				</div>
 				<div class="">
-					<img src="/src/assets/windows95box.jpg" alt="Коробка Windows 95" />
+					<img src={windows95_box} alt="Коробка Windows 95" />
 					<p class="mt-2 text-sm text-gray-700">
 						Коробка <a href="https://ru.wikipedia.org/wiki/Windows_95">Windows 95</a>, ставшая
 						иконой своего времени
@@ -54,7 +61,7 @@
 					<div class="w-[400px]">
 						<img
 							class="border-2 border-black"
-							src="/src/assets/desktop.png"
+							src={windows95_desktop}
 							alt="Рабочий стол Windows 95"
 						/>
 						<p class="mt-2 text-sm text-gray-700">
@@ -111,14 +118,12 @@
 					<div class="flex place-content-around place-items-center py-10">
 						<div class="window">
 							<TitleBar small text="Rolling Stones - Start Me Up" />
-							<audio class="window-body" controls src="/src/assets/start_me_up.mp3"></audio>
+							<audio class="window-body" controls src={start_me_up}></audio>
 						</div>
 						<div class="window flex flex-col">
 							<TitleBar small text="Рекламный ролик Windows 95" />
 							<div class="window-body !m-0">
-								<video controls src="/src/assets/windows95_commercial.mp4">
-									<track kind="captions" /></video
-								>
+								<video controls src={windows95_commercial}> <track kind="captions" /></video>
 							</div>
 						</div>
 					</div>
@@ -171,7 +176,7 @@
 					</p>
 				</div>
 				<div>
-					<img src="/src/assets/windows2000.jpg" class="w-[800px]" alt="Логотип >Windows 2000" />
+					<img src={windows2000} class="w-[800px]" alt="Логотип >Windows 2000" />
 					<p class="mt-2 text-sm text-gray-700">
 						Логотип <a href="https://ru.wikipedia.org/wiki/Windows_2000">Windows 2000</a>, символ
 						новой эпохи
@@ -194,9 +199,9 @@
 					<div
 						class="relative flex h-full w-full cursor-pointer place-content-center place-items-center"
 					>
-						<img class="absolute z-0 w-full blur-[3px]" src="/src/assets/win95_start.jpg" alt="" />
+						<img class="absolute z-0 w-full blur-[3px]" src={win95_start_desktop} alt="" />
 						<div class="relative z-10 flex flex-col place-items-center">
-							<img class=" h-16" src="/src/assets/start.jpg" alt="" />
+							<img class=" h-16" src={win95_start} alt="" />
 						</div>
 					</div>
 				</a>
@@ -205,7 +210,7 @@
 	</main>
 
 	<footer class="py-4 text-white">
-		<div class="container mx-auto font-bold  text-center text-base">
+		<div class="container mx-auto text-center text-base font-bold">
 			<p class="shadow-text">&copy; 2024 ИРИТ-РТФ & Еробкин Илья Евгеньевич 🩷</p>
 		</div>
 	</footer>
@@ -213,7 +218,7 @@
 
 <style>
 	.page {
-		background: url('/src/assets/clouds.png');
+		background: url('$lib/assets/clouds.png');
 		background-position: 0;
 		background-repeat: round;
 		background-size: cover;
